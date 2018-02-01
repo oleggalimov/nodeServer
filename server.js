@@ -20,21 +20,22 @@ app.use((req,res,next)=>{
     next();
 });
 //заглушка на все случаи жизни
-app.use((req,res,next)=>{
-    res.render('maintenace.hbs');
-});
+// app.use((req,res,next)=>{
+//     res.render('maintenace.hbs');
+// });
 
 app.use(expr.static(__dirname+'/views'));
 app.get(
     '/',
     (req,res)=>{
-        console.log('Get for root dir');
-        console.log(req.headers);
-        // res.send('<h1>Hellow Express!</h1>');
-        res.send({
-            age:27,
-            name:'Oleg'
-        });
+        // console.log('Get for root dir');
+        // console.log(req.headers);
+        // // res.send('<h1>Hellow Express!</h1>');
+        // res.send({
+        //     age:27,
+        //     name:'Oleg'
+        // });
+        res.render('about.hbs');
     }
 );
 app.get(
@@ -46,5 +47,6 @@ app.get(
         });
     }
 );
+
 
 app.listen(port, ()=>{console.log(`Server is up on ${port} port`)});
