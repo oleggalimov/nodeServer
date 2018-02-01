@@ -1,5 +1,7 @@
 const expr = require ('express');
 const hbs = require ('hbs');
+const port = process.env.PORT || 8080;
+
 let app = expr();
 app.set('view engine','hbs');
 
@@ -45,4 +47,4 @@ app.get(
     }
 );
 
-app.listen(8080, ()=>{console.log('Server is up on 8080 port')});
+app.listen(port, ()=>{console.log(`Server is up on ${port} port`)});
